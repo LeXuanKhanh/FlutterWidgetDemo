@@ -33,9 +33,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Retrieve Text Input'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: TextField(
