@@ -6,6 +6,7 @@ class textInputExample extends StatelessWidget {
     return MaterialApp(
       title: 'Retrieve Text Input',
       home: MyCustomForm(),
+      debugShowCheckedModeBanner: false
     );
   }
 }

@@ -13,6 +13,7 @@ class DateTimePickerExample extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
       home: new MyHomePage(),
+      debugShowCheckedModeBanner: false
     );
   }
 }

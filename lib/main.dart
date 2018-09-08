@@ -93,8 +93,10 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: new Drawer(
         child: new Column(
           children: <Widget>[
+            /*
             new UserAccountsDrawerHeader(
                 accountName: new Text("John Doe"), accountEmail: null),
+            */
             new Column(children: drawerOptions)
           ],
         ),

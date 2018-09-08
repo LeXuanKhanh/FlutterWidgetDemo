@@ -12,6 +12,7 @@ class NotificationExample extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false
     );
   }
 }
