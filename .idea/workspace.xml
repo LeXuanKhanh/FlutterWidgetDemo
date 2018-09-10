@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faaa99b9-ce7b-483f-8497-9f798ac8fb14" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/android/app/google-services.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/checkBoxExample.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/customListViewExample/customListView.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/customListViewExample/post.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/add_user_dialog.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/database/database_hepler.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/database/model/user.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/home_presenter.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/homescreen.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/list.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/databaseExample1/main.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/dropDownButtonExample.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/firebaseGmailAuthentication.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/switchExample.dart" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" afterPath="$PROJECT_DIR$/android/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" afterPath="$PROJECT_DIR$/android/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" afterPath="$PROJECT_DIR$/pubspec.lock" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" afterPath="$PROJECT_DIR$/pubspec.yaml" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -312,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536381701563</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove debug text on each screen">
+      <created>1536572960786</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536572960786</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -768,6 +756,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
