@@ -10,6 +10,13 @@ dependencies:
   cupertino_icons: ^0.1.2
   intl: ^0.15.7
   flutter_local_notifications:
+  path_provider: '>=0.3.0'
+  sqflite : any
+
+  cloud_firestore:
+  firebase_auth:
+  google_sign_in:
+
 
 dev_dependencies:
   flutter_test:

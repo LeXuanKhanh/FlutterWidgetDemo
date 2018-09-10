@@ -3,6 +3,11 @@ import 'alertDialogEx.dart';
 import 'DateTimePickerExample.dart';
 import 'textInputExample.dart';
 import 'notificationExample.dart';
+import 'switchExample.dart';
+import 'checkBoxExample.dart';
+import 'customListViewExample/customListView.dart';
+import 'databaseExample1/main.dart';
+import 'firebaseGmailAuthentication.dart';
 
 
 
@@ -35,10 +40,15 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   final drawerItems = [
-    new DrawerItem("Alert Dialog", Icons.rss_feed),
-    new DrawerItem("Date Time Picker", Icons.local_pizza),
-    new DrawerItem("Text Input", Icons.info),
-    new DrawerItem("Notificaton Example", Icons.ac_unit),
+    new DrawerItem("0.Alert Dialog", Icons.add_alert),
+    new DrawerItem("1.Date Time Picker", Icons.date_range),
+    new DrawerItem("2.Text Input", Icons.text_fields),
+    new DrawerItem("3.Notificaton Example", Icons.notifications_active),
+    new DrawerItem('4.Switch Example',Icons.switch_camera),
+    new DrawerItem('5.Check Box Example',Icons.check_box),
+    new DrawerItem('6.Custom List View Example', Icons.format_list_bulleted),
+    new DrawerItem('7.Database Example', Icons.developer_board),
+    new DrawerItem('8.Firebase Gmail Authiencation', Icons.mail),
   ];
 
   @override
@@ -59,6 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
         return new textInputExample();
       case 3:
         return new NotificationExample();
+      case 4:
+        return new SwitchExample();
+      case 5:
+        return new CheckBoxExample();
+      case 6:
+        return new ListViewApp();
+      case 7:
+        return new MyAppDB1();
+      case 8:
+        return new FirebaseGmailAuthientication();
       default:
         return new Text("Error");
     }
