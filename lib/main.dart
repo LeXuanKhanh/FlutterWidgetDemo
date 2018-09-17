@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
+
 import 'alertDialogEx.dart';
 import 'DateTimePickerExample.dart';
 import 'textInputExample.dart';
@@ -11,9 +14,24 @@ import 'firebaseGmailAuthentication.dart';
 
 
 
-void main() => runApp(new MyApp());
+
+
+void main() async {
+
+  //init shared gmail user data in SharedPreferences
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.getString('userDisplayName') == null)
+    await prefs.setString('userDisplayName', 'unknown user from SharedPreferences');
+  if (prefs.getString('userEmail') == null)
+    await prefs.setString('userEmail', 'unknown email from SharedPreferences');
+  if (prefs.getString('userAvatarUrl') == null)
+    await prefs.setString('userAvatarUrl', '');
+
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -35,6 +53,8 @@ class DrawerItem {
 }
 
 class MyHomePage extends StatefulWidget {
+
+
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -57,8 +77,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  /*BEGIN App Drawer Navigation*/
   int _selectedDrawerIndex = 0;
 
+  //return screen on specific items on position (index)
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
@@ -84,14 +106,26 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  _onSelectItem(int index) {
+  //when select item, change the position (index) and close the drawer
+  _onSelectItem(int index) async{
     setState(() => _selectedDrawerIndex = index);
     Navigator.of(context).pop(); // close the drawer
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    //print(prefs.getString('userDisplayName'));
   }
+  /*END App Drawer Navigation*/
 
   @override
-  Widget build(BuildContext context) {
+  void initState(){
+    // TODO: implement initState
+    super.initState();
+  }
 
+  //drawer list
+  @override
+  Widget build(BuildContext context) {
     var drawerOptions = <Widget>[];
     for (var i = 0; i < widget.drawerItems.length; i++) {
       var d = widget.drawerItems[i];
@@ -105,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     }
 
+    
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
@@ -113,11 +148,40 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: new Drawer(
         child: new Column(
           children: <Widget>[
-            /*
-            new UserAccountsDrawerHeader(
-                accountName: new Text("John Doe"), accountEmail: null),
-            */
-            new Column(children: drawerOptions)
+
+            new FutureBuilder(
+                future: SharedPreferences.getInstance(),
+                builder: (context,snapshot){
+                  if (snapshot.hasData){
+                    SharedPreferences prefs = snapshot.data;
+                    if (prefs.getString('userAvatarUrl') != '')
+                      return UserAccountsDrawerHeader(
+                        accountName: new Text(prefs.getString("userDisplayName")),
+                        accountEmail: new Text(prefs.getString("userEmail")),
+                        currentAccountPicture: new CircleAvatar( backgroundImage: new NetworkImage(prefs.getString("userAvatarUrl")) ),
+                      );
+                    else
+                      return UserAccountsDrawerHeader(
+                        accountName: new Text(prefs.getString("userDisplayName")),
+                        accountEmail: new Text(prefs.getString("userEmail")),
+                        currentAccountPicture: new CircleAvatar( backgroundImage: new AssetImage('assets/avatar.png') ),
+                      );
+                  }
+                  else
+                    return UserAccountsDrawerHeader(
+                      accountName: new Text('loading...'),
+                      accountEmail: new Text('loading...'),
+                      currentAccountPicture: new CircleAvatar( backgroundImage: new AssetImage('assets/avatar.png') ),
+                    );
+                }
+            ),
+
+            new Expanded(
+              flex: 1,
+              child: new SingleChildScrollView(
+                child: new Column(children: drawerOptions),
+              ),
+            ),
           ],
         ),
       ),
