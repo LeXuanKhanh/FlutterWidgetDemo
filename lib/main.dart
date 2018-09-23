@@ -11,7 +11,7 @@ import 'customListViewExample/customListView.dart';
 import 'databaseExample1/main.dart';
 import 'firebaseGmailAuthentication.dart';
 import 'firebaseStorageExample.dart';
-
+import 'googleMapExample.dart';
 
 
 
@@ -70,6 +70,7 @@ class MyHomePage extends StatefulWidget {
     new DrawerItem('7.Database Example', Icons.developer_board),
     new DrawerItem('8.Firebase Gmail Authiencation', Icons.mail),
     new DrawerItem('9.Firebase Storage', Icons.storage),
+    new DrawerItem('10.Google Map',Icons.map),
   ];
 
   @override
@@ -104,6 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
         return new FirebaseGmailAuthientication();
       case 9:
         return new FirebaseStorageExample();
+      case 10:
+        return new GoogleMapExample();
       default:
         return new Text("Error");
     }

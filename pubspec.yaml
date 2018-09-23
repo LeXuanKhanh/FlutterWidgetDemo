@@ -19,6 +19,10 @@ dependencies:
   shared_preferences:
   firebase_storage:
   image_picker:
+  google_maps_flutter:
+   git:
+     url: git://github.com/flutter/plugins
+     path: packages/google_maps_flutter
 
 dev_dependencies:
   flutter_test:
