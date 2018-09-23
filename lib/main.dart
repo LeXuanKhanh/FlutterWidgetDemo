@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:async';
 
 import 'alertDialogEx.dart';
 import 'DateTimePickerExample.dart';
@@ -11,6 +10,7 @@ import 'checkBoxExample.dart';
 import 'customListViewExample/customListView.dart';
 import 'databaseExample1/main.dart';
 import 'firebaseGmailAuthentication.dart';
+import 'firebaseStorageExample.dart';
 
 
 
@@ -69,6 +69,7 @@ class MyHomePage extends StatefulWidget {
     new DrawerItem('6.Custom List View Example', Icons.format_list_bulleted),
     new DrawerItem('7.Database Example', Icons.developer_board),
     new DrawerItem('8.Firebase Gmail Authiencation', Icons.mail),
+    new DrawerItem('9.Firebase Storage', Icons.storage),
   ];
 
   @override
@@ -101,6 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
         return new MyAppDB1();
       case 8:
         return new FirebaseGmailAuthientication();
+      case 9:
+        return new FirebaseStorageExample();
       default:
         return new Text("Error");
     }
